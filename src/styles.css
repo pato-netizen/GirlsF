@@ -1,0 +1,277 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY + FONDO */
+html, body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(
+    135deg,
+    #00e7d4,
+    #505488,
+    #ef3f80,
+    #161569,
+    #ef3f80,
+    #505488,
+    #00e7d4
+  );
+  background-size: 500%;
+  animation: fanimado 60s infinite;
+  overflow-y: auto;   /* ✅ SCROLL */
+  overflow-x: hidden;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor {
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  padding: 40px 20px;
+  color: white;
+}
+
+/* OCULTAR */
+.hidden {
+  display: none !important;
+}
+
+/* TEXTO */
+.letra-neon {
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  text-shadow:
+    0 0 5px red,
+    0 0 15px red,
+    0 0 30px red;
+}
+
+.neon3 {
+  font-family: monospace;
+  font-size: 1.6rem;
+  padding: 15px;
+  text-shadow:
+    0 0 5px white,
+    0 0 15px white;
+}
+
+/* 🔥 SOLO LA PREGUNTA CON BORDE NEÓN */
+.container {
+  display: inline-block;
+  padding: 25px 50px;
+  margin-bottom: 30px;
+  border-radius: 50px;
+  border: 2px solid white;
+  box-shadow:
+    inset 0 0 10px red,
+    0 0 25px red;
+}
+
+/* IMAGEN */
+.imagen-romantica {
+  width: 80%;
+  max-width: 300px;
+  margin: 25px auto;
+  display: block;
+}
+
+/* BOTONES */
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.bn-neon {
+  font-size: 1.5rem;
+  padding: 14px 40px;
+  border-radius: 40px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  box-shadow:
+    inset 0 0 5px red,
+    0 0 10px red;
+  transition: 0.3s;
+}
+
+.bn-neon:hover {
+  transform: scale(1.1);
+  box-shadow:
+    inset 0 0 10px red,
+    0 0 25px red;
+}
+
+/* SPOTIFY */
+.spotify-card {
+  margin-top: 40px;
+  padding: 25px 35px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow:
+    0 0 20px #1db954,
+    0 0 40px #1db954;
+  display: inline-block;
+}
+
+.spotify-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 15px 30px;
+  border-radius: 40px;
+  border: 2px solid #1db954;
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+  box-shadow:
+    inset 0 0 10px #1db954,
+    0 0 15px #1db954;
+  transition: 0.3s;
+}
+
+.spotify-btn:hover {
+  background: #1db954;
+  color: black;
+  transform: scale(1.1);
+}
+
+/* CELEBRACIÓN */
+#celebracion {
+  position: relative;
+  z-index: 10;
+}
+
+/* FUEGOS */
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* ANIMACIÓN FONDO */
+@keyframes fanimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* BURBUJAS */
+.burbuja {
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.3;
+  position: absolute;
+  bottom: -150px;
+  animation: burbujas 6s linear infinite;
+}
+
+@keyframes burbujas {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    bottom: 100vh;
+    opacity: 0;
+  }
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+/* TABLETS Y CELULARES */
+@media (max-width: 768px) {
+
+  .letra-neon {
+    font-size: 2.2rem;
+    padding: 0 10px;
+  }
+
+  .neon3 {
+    font-size: 1.3rem;
+  }
+
+  .container {
+    padding: 20px 25px;
+    border-radius: 35px;
+    max-width: 90%;
+  }
+
+  .imagen-romantica {
+    width: 90%;
+    max-width: 260px;
+  }
+
+  .botones {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .bn-neon {
+    width: 80%;
+    font-size: 1.3rem;
+    padding: 14px;
+  }
+
+  .spotify-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .spotify-btn {
+    font-size: 1.1rem;
+    padding: 12px 25px;
+  }
+}
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 480px) {
+
+  .letra-neon {
+    font-size: 1.9rem;
+  }
+
+  .neon3 {
+    font-size: 1.1rem;
+  }
+
+  .bn-neon {
+    width: 90%;
+    font-size: 1.2rem;
+  }
+
+  .spotify-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* PANTALLAS GRANDES */
+@media (min-width: 1200px) {
+
+  .contenedor {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .imagen-romantica {
+    max-width: 350px;
+  }
+}
